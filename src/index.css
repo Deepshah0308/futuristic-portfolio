@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gradient Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-gradient {
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+}
+
+.hero-gradient-dark {
+  background: radial-gradient(circle at top left, #5E3AEE, #C56BF0, #121212);
+}
+
+.hero-gradient-light {
+  background: linear-gradient(120deg, #D1C4E9, #F8BBD0);
+}
+
+.glassmorphism {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* Custom cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #5E3AEE;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+.cursor-dot {
+  width: 4px;
+  height: 4px;
+  background: #C56BF0;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.particle {
+  position: fixed;
+  pointer-events: none;
+  background: #5E3AEE;
+  border-radius: 50%;
+  z-index: 9998;
+  opacity: 0.6;
+  animation: particle-fade 0.5s ease-out forwards;
+}
+
+@keyframes particle-fade {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 0 0 5px #5E3AEE, 0 0 10px #5E3AEE, 0 0 15px #5E3AEE;
+  }
+  50% {
+    box-shadow: 0 0 10px #5E3AEE, 0 0 20px #5E3AEE, 0 0 30px #5E3AEE;
+  }
+  100% {
+    box-shadow: 0 0 5px #5E3AEE, 0 0 10px #5E3AEE, 0 0 15px #5E3AEE;
+  }
+}
+
+@keyframes text-glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #5E3AEE, -0.05em -0.025em 0 #C56BF0;
+  }
+  14% {
+    text-shadow: 0.05em 0 0 #5E3AEE, -0.05em -0.025em 0 #C56BF0;
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 #5E3AEE, 0.025em 0.025em 0 #C56BF0;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #5E3AEE, 0.025em 0.025em 0 #C56BF0;
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 #5E3AEE, 0.05em 0 0 #C56BF0;
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 #5E3AEE, 0.05em 0 0 #C56BF0;
+  }
+  100% {
+    text-shadow: -0.025em 0 0 #5E3AEE, -0.025em -0.025em 0 #C56BF0;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-neon {
+  animation: neon-pulse 2s infinite;
+}
+
+.animate-glitch {
+  animation: text-glitch 3s infinite linear alternate-reverse;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5E3AEE;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C56BF0;
+}
